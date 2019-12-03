@@ -1,0 +1,12 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<h2> All List view</h2><br>
+<form>
+    <input value="{{request.GET.si}}" type="text" name="si"/>
+    <input type="submit"/>
+</form>
+{% for n in notice_list %}
+<h3><a href="/firstapp/notice/{{n.id}}">{{n.subject}}</a></h3>
+{%endfor%}
+{% endblock %}
